@@ -15,8 +15,6 @@ int main()
 {
     int n;
     MaxMin maxMinPair;
-    maxMinPair.minimum = 0;
-    maxMinPair.maximum = 9;
 
     cout << "Enter the number of elements in array: ";
     cin >> n;
