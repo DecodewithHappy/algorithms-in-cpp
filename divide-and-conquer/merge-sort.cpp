@@ -28,14 +28,12 @@ int main()
 void displayArray(int array[], int start, int end)
 {
     for (int i = start; i <= end; i++)
-    {
         cout << array[i] << "\t";
-    }
 }
 
 void mergeSort(int array[], int start, int end)
 {
-    if (start > end)
+    if (start >= end)
         return;
 
     int middle = (start + end) / 2;
@@ -47,4 +45,26 @@ void mergeSort(int array[], int start, int end)
 
 void merge(int array[], int start, int middle, int end)
 {
+    int temp[100];
+
+    int i = start;
+    int j = middle + 1;
+    int k = start;
+
+    while (i <= middle && j <= end)
+    {
+        if (array[i] < array[j])
+            temp[k++] = array[i++];
+        else
+            temp[k++] = array[j++];
+    }
+
+    while (i <= middle)
+        temp[k++] = array[i++];
+
+    while (j <= end)
+        temp[k++] = array[j++];
+
+    for (int i = start; i <= end; i++)
+        array[i] = temp[i];
 }
