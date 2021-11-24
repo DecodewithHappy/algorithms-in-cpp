@@ -45,9 +45,9 @@ bool binarySearch(int array[], int start, int end, int search)
     else
     {
         if (search > array[middle])
-            binarySearch(array, middle + 1, end, search);
+            return binarySearch(array, middle + 1, end, search);
 
         else
-            binarySearch(array, start, middle - 1, search);
+            return binarySearch(array, start, middle - 1, search);
     }
 }
