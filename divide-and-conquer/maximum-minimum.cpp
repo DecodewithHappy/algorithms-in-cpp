@@ -49,7 +49,6 @@ MaxMin maximumMinimum(int array[], int start, int end)
         }
         else
         {
-
             maxMin.maximum = array[end];
             maxMin.minimum = array[start];
         }
