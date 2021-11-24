@@ -4,6 +4,7 @@ using namespace std;
 
 void displayArray(int array[], int start, int end);
 void quickSort(int array[], int start, int end);
+int partition(int array[], int start, int end);
 
 int main()
 {
@@ -28,4 +29,14 @@ void displayArray(int array[], int start, int end)
 {
     for (int i = start; i <= end; i++)
         cout << array[i] << "\t";
+}
+
+void quickSort(int array[], int start, int end)
+{
+    if (start >= end)
+        return;
+
+    int boundary = partition(array, start, end);
+    quickSort(array, start, boundary);
+    quickSort(array, boundary + 1, end);
 }
