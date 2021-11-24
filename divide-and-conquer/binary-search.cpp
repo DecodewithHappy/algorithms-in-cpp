@@ -15,9 +15,7 @@ int main()
 
     cout << "Enter " << n << " elements (in ascending order) " << endl;
     for (int i = 0; i < n; i++)
-    {
         cin >> array[i];
-    }
 
     int search;
     cout << "Enter element to be searched: ";
@@ -26,14 +24,9 @@ int main()
     bool result = binarySearch(array, 0, 10, search);
 
     if (result == true)
-    {
         cout << "Element found" << endl;
-    }
-
     else
-    {
         cout << "Element not found" << endl;
-    }
 }
 
 bool binarySearch(int array[], int start, int end, int search)
