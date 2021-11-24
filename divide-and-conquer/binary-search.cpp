@@ -6,11 +6,15 @@ bool binarySearch(int array[], int start, int end, int search);
 
 int main()
 {
-    cout << "Enter 10 elements (in ascending order) " << endl;
+    int n;
 
-    int array[10];
+    cout << "Enter the number of elements in array: ";
+    cin >> n;
 
-    for (int i = 0; i < 10; i++)
+    int array[n];
+
+    cout << "Enter " << n << " elements (in ascending order) " << endl;
+    for (int i = 0; i < n; i++)
     {
         cin >> array[i];
     }
