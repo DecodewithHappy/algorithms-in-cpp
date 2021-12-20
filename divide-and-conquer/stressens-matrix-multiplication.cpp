@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     int n;
-    cout << "Enter the size of the matrix: ";
+    cout << "Enter the size of the array: ";
     cin >> n;
 
     int matrix[n][n];
