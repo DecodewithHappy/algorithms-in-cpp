@@ -10,7 +10,7 @@ int main()
     double call12(double [4][4]);
     double call21(double [4][4]);
     double call22(double [4][4]);
-    void display_matrix(double, double, double, double, double, double, double);
+    //void display_matrix(double *, double *, double *, double *, double *, double *, double *);
 
     //int n;
     // cout << "Enter the size of the array: ";
@@ -51,7 +51,9 @@ int main()
 
     //Display final matrix
     cout<<"\n final matrix";
-    display_matrix(p,q,r,s,t,u,v);
+    cout<<"\n"<<p+s-t+v<<" "<<r+t;
+	cout<<"\n"<<q+s<<" "<<p+r-q+u;    
+    //display_matrix(&p, &q, &r, &s, &t, &u, &v);
     return 0;
 }
 
@@ -92,7 +94,7 @@ double call22(double x[4][4])
 	return (x[2][3] * x[1][4])+ (x[2][4] * x[1][3]);
 }
 
-void display_matrix(double p, double q, double r, double s, double t, double u, double v){
-    cout<<"\n"<<p+s-t+v<<" "<<r+t;
-	cout<<"\n"<<q+s<<" "<<p+r-q+u;
-}
+/*void display_matrix(double *p, double *q, double *r, double *s, double *t, double *u, double *v){
+    cout<<"\n"<< (*p)+(*s)-(*t)+(*v) <<" "<< (*r)+(*t);
+	cout<<"\n"<< (*q)+(*s) <<" "<< (*p)+(*r)-(*q)+(*u);
+}*/
