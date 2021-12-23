@@ -4,8 +4,8 @@ using namespace std;
 
 typedef struct stack
 {
-   int d1;
-   int d2;
+   int data1;
+   int data2;
    struct stack *link;
 }stack;
 
@@ -15,7 +15,7 @@ int main(){
    void quicksort(int[], int);
    int partition(int [], int *, int, int);
    stack *top;
-   int i, lb, ub;
+   int i, lb, ub;  // lb indicates lower bound and ub indicates upper bound
    int a[50], n;
    cout << "Enter the total number of elements: " << endl;
    cin >> n;
@@ -25,7 +25,7 @@ int main(){
       cin >> a[i];
    }
    quicksort(a, n);
-   cout << "\n" << "After sorting";
+   cout << "\n" << "After sorting: ";
    for(i=0; i<n; i++){
       cout << a[i] << " ";
    }
@@ -36,8 +36,8 @@ int main(){
 int push(stack **top, int lb, int ub){
    stack *nn;
    nn = (struct stack*)malloc(sizeof(stack));
-   (nn->d1) = lb;
-   (nn->d2) = ub;
+   (nn->data1) = lb;
+   (nn->data2) = ub;
    if((*top) == NULL){
       (nn->link) = NULL;
       (*top) = nn;
@@ -54,14 +54,14 @@ int pop(stack **top, int (*lb), int (*ub)){
       return 0;
    }
    ptr = (*top);
-   (*lb) = ptr->d1;
-   (*ub) = ptr->d2;
+   (*lb) = ptr->data1;
+   (*ub) = ptr->data2;
    (*top) = (*top)->link;
    free(ptr);
    return 0;
 }
 
-int partition(int a[50], int (*pi), int low, int high){
+int partition(int a[50], int (*pi), int low, int high){ //pi holds the index of pivot
    int temp;
    int pivot = a[low];
    int down = low;
@@ -88,19 +88,19 @@ int partition(int a[50], int (*pi), int low, int high){
 }
 
 void quicksort(int a[50], int n){
-   int l, b, pi;
+   int lbound, ubound, pi;
    stack *top;
    top = NULL;
    push(&top, 0, n-1);
    while(top != NULL){
-      pop(&top, &l, &b);
+      pop(&top, &lbound, &ubound);
 
-      partition(a, &pi, l, b);
-      if(l < (pi-1)){
-         push(&top, l, (pi-1));
+      partition(a, &pi, lbound, ubound);
+      if(lbound < (pi-1)){
+         push(&top, lbound, (pi-1));
       }
-      if((pi+1) < b){
-         push(&top, (pi+1), b);
+      if((pi+1) < ubound){
+         push(&top, (pi+1), ubound);
       }
    }
 }
