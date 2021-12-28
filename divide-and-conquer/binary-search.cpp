@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
@@ -17,8 +18,7 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> array[i];
 
-    cin.clear();
-    fflush(stdin);
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     int search;
     cout << "Enter element to be searched: ";
