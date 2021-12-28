@@ -17,6 +17,9 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> array[i];
 
+    cin.clear();
+    fflush(stdin);
+
     int search;
     cout << "Enter element to be searched: ";
     cin >> search;
