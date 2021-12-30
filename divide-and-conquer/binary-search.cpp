@@ -18,16 +18,16 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> array[i];
 
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    // std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     int search;
     cout << "Enter element to be searched: ";
     cin >> search;
 
-    int index = binarySearch(array, 0, 10, search);
+    int position = binarySearch(array, 0, 10, search);
 
-    if (index != -9999)
-        cout << "Element found at position " << index << endl;
+    if (position != -9999)
+        cout << "Element found at position " << position << endl;
     else
         cout << "Element not found" << endl;
 }
